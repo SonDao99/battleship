@@ -130,7 +130,6 @@ test('returns true when all ships have been sunk', () => {
     for (let i = 0; i < ship.length; i += 1) {
       ship.hit(i);
     }
-    console.log(ship.isSunk());
   });
   expect(testGame.allSunk()).toBeTruthy();
 });
