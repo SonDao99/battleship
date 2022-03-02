@@ -1,21 +1,32 @@
 const gameboard = require('./gameboard');
 
 const player = (name) => {
-  const playerBoard = gameboard();
+  // const board = gameboard();
 
-  const makeRandomMove = () => {
-    const legalMoves = [];
-    for (let i = 0; i < 10; i += 1) {
-      for (let j = 0; j < 10; j += 1) {
-        if (playerBoard.getBoard()[i][j] === '') {
-          legalMoves.push([i, j]);
-        }
-      }
+  let legalMoves = [];
+  for (let i = 0; i < 10; i += 1) {
+    for (let j = 0; j < 10; j += 1) {
+      legalMoves.push([i, j]);
     }
-    return legalMoves[Math.floor(Math.random() * (legalMoves.length - 1))];
+  }
+
+  const getLegalMoves = () => legalMoves;
+
+  const setLegalMoves = (newList) => { legalMoves = newList; };
+
+  const saveAttackMove = (newMove) => {
+    setLegalMoves(getLegalMoves().filter((move) => (
+      (move[0] !== newMove[0]) || (move[1] !== newMove[1])
+    )));
   };
 
-  return { name, playerBoard, makeRandomMove };
+  const makeRandomMove = () => (
+    getLegalMoves()[Math.floor(Math.random() * (getLegalMoves().length - 1))]
+  );
+
+  return {
+    name, getLegalMoves, saveAttackMove, makeRandomMove,
+  };
 };
 
 module.exports = player;
