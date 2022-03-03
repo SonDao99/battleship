@@ -38,11 +38,11 @@ const gameboard = () => {
     const currentShip = shipSelection(shipCode);
     const shipLength = currentShip.length;
 
-    if (axis === 'x' && (yCoordinate + shipLength < 10)) {
+    if (axis === 'x' && (yCoordinate + shipLength <= 10)) {
       for (let i = yCoordinate; i < yCoordinate + shipLength; i += 1) {
         board[xCoordinate][i] = shipCode + (i - yCoordinate).toString();
       }
-    } else if (axis === 'y' && (xCoordinate + shipLength < 10)) {
+    } else if (axis === 'y' && (xCoordinate + shipLength <= 10)) {
       for (let i = xCoordinate; i < xCoordinate + shipLength; i += 1) {
         board[i][yCoordinate] = shipCode + (i - xCoordinate).toString();
       }
