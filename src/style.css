@@ -1,0 +1,21 @@
+#bothGrids {
+    display: flex;
+    gap: 40px;
+}
+
+.battleGrid {
+    display: grid;
+    grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+    gap: 2px;
+}
+
+.gameSquare {
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: black;
+    cursor: crosshair;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
