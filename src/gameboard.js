@@ -19,6 +19,8 @@ const gameboard = () => {
 
   const allShips = [carrier, battleship, cruiser, submarine, destroyer];
 
+  const getAllShips = () => allShips;
+
   const shipSelection = (shipCode) => {
     if (shipCode === 'de') {
       return destroyer;
@@ -73,7 +75,7 @@ const gameboard = () => {
   };
 
   return {
-    getBoard, allShips, placeShip, receiveAttack, allSunk,
+    getBoard, getAllShips, placeShip, receiveAttack, allSunk,
   };
 };
 
