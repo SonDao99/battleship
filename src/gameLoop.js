@@ -73,10 +73,6 @@ const gameLoop = (playerOneName = 'Player', playerTwoName = 'Computer') => {
           );
           takenSquares.push([row, j]);
         }
-
-        console.log(availableSquares.length);
-        console.log(legalSquares);
-        console.log(takenSquares);
       } else if (axis === 'y') {
         let legalSquares = availableSquares.filter((square) => square[0] <= (10 - shipLengths[i]));
         for (let j = 0; j < takenSquares.length; j += 1) {
@@ -95,10 +91,6 @@ const gameLoop = (playerOneName = 'Player', playerTwoName = 'Computer') => {
             && square[1] === column));
           takenSquares.push([j, column]);
         }
-
-        console.log(availableSquares);
-        console.log(legalSquares);
-        console.log(takenSquares);
       }
     }
   };
