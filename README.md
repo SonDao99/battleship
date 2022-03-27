@@ -1,5 +1,7 @@
 # Battleship Game
 
+Built using HTML, CSS, JavaScript with test driven development using JEST. ESLint was also used with Airbnb's configurations.
+
 A JavaScript game app based on the popular board game Battleship [(Wikipedia)](https://en.wikipedia.org/wiki/Battleship_(game)). Players can place their ships by hovering and clicking on the grid. They can change the direction in which the ships can be placed by clicking the button at the top. Players can then press start once all the ships have been placed. The players will play against an AI making random moves. 
 
 Main menu:
